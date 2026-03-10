@@ -1,0 +1,30 @@
+# Git
+.git
+.gitignore
+
+# Build outputs
+target/
+!.target/*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database (we'll use PostgreSQL in production)
+*.db
+*.trace.db
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+

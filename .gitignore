@@ -1,0 +1,40 @@
+# Build outputs
+node_modules/
+.next/
+out/
+target/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.trace.db
+newsagency-db.mv.db
+newsagency-db.trace.db
+
+# Uploads (in production, use cloud storage)
+uploads/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
