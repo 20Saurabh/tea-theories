@@ -1,3 +1,4 @@
+
 services:
   # Backend API Service
   - type: web
@@ -7,9 +8,7 @@ services:
     dockerCommand: java -jar app.jar
     envVars:
       - key: SERVER_PORT
-        value: 8801
-      - key: SPRING_PROFILES_ACTIVE
-        value: prod
+        value: "8801"
       - key: DB_DRIVER
         value: org.postgresql.Driver
       - key: DB_DIALECT
@@ -17,13 +16,13 @@ services:
       - key: H2_CONSOLE_ENABLED
         value: "false"
       - key: JWT_SECRET
-        value: ThisIsAVerySecretKeyForJWTTokenGeneration2024ChangeMe!
+        value: ThisIsAVerySecretKeyForJWTTokenGeneration2024!
       - key: ADMIN_USERNAME
         value: admin
       - key: ADMIN_PASSWORD
         value: admin123
       - key: APP_CORS_ORIGINS
-        # Update this after deploying frontend - add your Vercel URL here
+        # UPDATE THIS: Add your Vercel frontend URL after deployment
         value: "http://localhost:3000,http://localhost:3301"
     autoDeploy: true
     branch: main
@@ -36,8 +35,8 @@ services:
     # Password will be generated - copy from Render dashboard
     ipAllowList: [] # Allow only attached services
 
-# After deploying:
+# IMPORTANT: After deploying:
 # 1. Go to news-agency-backend → Environment
-# 2. Add DB_URL from the PostgreSQL service
-# 3. Update APP_CORS_ORIGINS with your Vercel frontend URL
+# 2. Add DB_URL from the PostgreSQL service (it will be auto-linked)
+# 3. Update APP_CORS_ORIGINS with your Vercel frontend URL (e.g., https://your-app.vercel.app)
 

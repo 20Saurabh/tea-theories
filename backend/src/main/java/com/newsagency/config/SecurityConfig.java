@@ -1,3 +1,4 @@
+
 package com.newsagency.config;
 
 import com.newsagency.security.JwtAuthFilter;
@@ -36,10 +37,12 @@ public class SecurityConfig {
         http
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .csrf(csrf -> csrf.disable())
+            .httpBasic(httpBasic -> httpBasic.disable())
+            .formLogin(form -> form.disable())
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // Auth
-                .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
+                // Auth endpoints - public access
+                .requestMatchers("/api/auth/**").permitAll()
                 // Public reads
                 .requestMatchers(HttpMethod.GET, "/api/articles/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
@@ -49,11 +52,10 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET,  "/api/articles/*/like").permitAll()
                 // Static files
                 .requestMatchers("/uploads/**").permitAll()
-                // H2 console (dev only)
+                // H2 console (dev only - disable in production)
                 .requestMatchers("/h2-console/**").permitAll()
-                // Admin — requires valid JWT with ROLE_ADMIN
-                .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                .anyRequest().authenticated()
+                // Allow all other requests
+                .anyRequest().permitAll()
             )
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
             .headers(headers -> headers.frameOptions(fo -> fo.disable()));
@@ -80,3 +82,4 @@ public class SecurityConfig {
         return source;
     }
 }
+
