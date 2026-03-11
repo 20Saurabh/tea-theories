@@ -2,8 +2,8 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata = {
-  title: 'Contact — Tea and Theories',
-  description: 'Contact Tea and Theories for feedback, inquiries, or collaboration.',
+  title: 'Contact — Pasta and Perspective',
+  description: 'Contact Pasta and Perspective for feedback, inquiries, or collaboration.',
 };
 
 export default function ContactPage() {

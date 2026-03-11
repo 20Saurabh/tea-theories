@@ -3,7 +3,7 @@ import './globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
-  title: 'Tea and Theories',
+  title: 'Pasta and Perspective',
   description: 'Ideas. History. Philosophy. Society. Thoughtful writing on the questions that shape our world.',
 };
 
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', paddingBottom: '60px' }}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

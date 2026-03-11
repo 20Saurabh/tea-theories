@@ -56,10 +56,10 @@ function formatDate(d: string | null) {
 }
 
 export const metadata = {
-  title: 'Tea and Theories',
+  title: 'Pasta and Perspective',
   description: 'Ideas worth sitting with. — Writing on philosophy, history, culture, and the questions that matter.',
   openGraph: {
-    title: 'Tea and Theories',
+    title: 'Pasta and Perspective',
     description: 'Ideas worth sitting with. — Writing on philosophy, history, culture, and the questions that matter.',
     type: 'website',
   },
@@ -77,6 +77,10 @@ export default async function HomePage() {
     ? recentArticles.filter(a => a.id !== latestArticle.id).slice(0, 5)
     : recentArticles.slice(0, 6);
 
+  // Group categories by parent
+  const parentCategories = categories.filter(cat => !cat.parentSlug);
+  const getSubcategories = (parentSlug: string) => categories.filter(cat => cat.parentSlug === parentSlug);
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--paper)', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
@@ -87,7 +91,7 @@ export default async function HomePage() {
           <div className="pt-14 pb-12" style={{ borderBottom: '1px solid var(--border)' }}>
             <div className="mb-6 overflow-hidden" style={{ aspectRatio: '16/9' }}>
               <img 
-                src="https://images.unsplash.com/photo-1594368247420-00c4447881d2?q=80&w=1170&auto=format&fit=crop" 
+                src="https://thumbs.dreamstime.com/b/ai-generated-optical-illusion-digital-art-mind-bending-elements-like-people-animals-buildings-landscapes-etc-mind-bending-268997483.jpg?w=992" 
                 alt="Hero" 
                 className="w-full h-full object-cover"
               />
@@ -96,7 +100,7 @@ export default async function HomePage() {
               Ideas worth sitting with.
             </p>
             <p className="text-base leading-relaxed mb-4" style={{ color: 'var(--muted)' }}>
-              Writing on philosophy, history, culture, and the questions that matter.
+              Writing on philosophy, history, literature, and the questions that matter.
             </p>
             <Link href="/articles" 
               className="inline-block text-sm border-b pb-0.5 hover:opacity-60 transition-opacity"
@@ -124,7 +128,7 @@ export default async function HomePage() {
                   </p>
                 )}
                 <div className="text-sm" style={{ color: 'var(--muted2)' }}>
-                  {latestArticle.author || 'Tea and Theories'} · {formatDate(latestArticle.publishedAt)} · {latestArticle.readingTime || 1} min read
+                  {latestArticle.author || 'Pasta and Perspective'} · {formatDate(latestArticle.publishedAt)} · {latestArticle.readingTime || 1} min read
                 </div>
               </article>
             </div>
@@ -151,7 +155,7 @@ export default async function HomePage() {
                       </p>
                     )}
                     <div className="text-xs" style={{ color: 'var(--muted2)' }}>
-                      {article.author || 'Tea and Theories'} · {formatDate(article.publishedAt)} · {article.readingTime || 1} min read
+                      {article.author || 'Pasta and Perspective'} · {formatDate(article.publishedAt)} · {article.readingTime || 1} min read
                     </div>
                   </article>
                 ))}
@@ -159,29 +163,29 @@ export default async function HomePage() {
             </div>
           )}
 
-          {/* Explore Ideas */}
-          {categories.length > 0 && (
+          {/* Explore Themes */}
+          {parentCategories.length > 0 && (
             <div className="py-10">
               <h2 className="font-serif text-lg font-bold mb-6" style={{ color: 'var(--muted2)' }}>
                 Explore Themes
               </h2>
-              <div className="grid grid-cols-4 gap-3">
-                {categories.map(cat => (
-                  <Link 
-                    key={cat.id} 
-                    href={`/category/${cat.slug}`}
-                    className="block p-4 border text-center hover:opacity-70 transition-opacity"
-                    style={{ 
-                      color: 'var(--ink)', 
-                      borderColor: 'var(--border)',
-                      backgroundColor: 'var(--card-bg)'
-                    }}
-                  >
-                    <div className="text-sm font-medium">{cat.name}</div>
-                    <div className="text-xs mt-1" style={{ color: 'var(--muted2)' }}>
-                      {cat.articleCount} {cat.articleCount === 1 ? 'article' : 'articles'}
-                    </div>
-                  </Link>
+              <div className="flex flex-wrap gap-x-6 gap-y-4">
+                {parentCategories.map((parent, index) => (
+                  <div key={parent.id} className="flex items-baseline gap-2">
+                    <Link 
+                      href={`/category/${parent.slug}`}
+                      className="font-serif text-base font-bold border-b pb-0.5 hover:opacity-60 transition-opacity"
+                      style={{ color: 'var(--ink)', borderColor: 'var(--border)' }}
+                    >
+                      {parent.name}
+                    </Link>
+                    {parent.slug === 'news' && (
+                      <span className="text-xs" style={{ color: 'var(--muted)' }}>(National, International)</span>
+                    )}
+                    {parent.slug === 'literature' && (
+                      <span className="text-xs" style={{ color: 'var(--muted)' }}>(Hindi, English)</span>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>

@@ -47,7 +47,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <aside className="w-52 border-r border-[#e5e5e3] flex flex-col fixed top-0 bottom-0 z-20">
         <div className="p-5 border-b border-[#e5e5e3]">
           <Link href="/" className="font-serif text-lg font-bold text-[#0a0a0a] hover:opacity-70 transition-opacity">
-            Tea and Theories
+            Pasta and Perspective
           </Link>
           <p className="text-xs text-[#9b9b9b] mt-0.5">Admin Panel</p>
         </div>

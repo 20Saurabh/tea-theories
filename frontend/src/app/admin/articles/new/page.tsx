@@ -31,7 +31,7 @@ export default function NewArticlePage() {
   const [excerpt, setExcerpt] = useState('');
   const [content, setContent] = useState('');
   const [categoryId, setCategoryId] = useState('');
-  const [author, setAuthor] = useState('Tea and Theories');
+  const [author, setAuthor] = useState('Pasta and Perspective');
   const [coverImage, setCoverImage] = useState('');
   const [metaDescription, setMetaDescription] = useState('');
   const [tags, setTags] = useState('');

@@ -15,14 +15,21 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) {
         if (categoryRepository.count() == 0) {
-            createCategory("National News", "national-news", null, 1);
-            createCategory("International News", "international-news", null, 2);
-            createCategory("Philosophy", "philosophy", null, 3);
-            createCategory("Ethics", "ethics", null, 4);
-            createCategory("Literature", "literature", null, 5);
-            createCategory("Hindi", "hindi", "literature", 6);
-            createCategory("English", "english", "literature", 7);
-            createCategory("Others", "others", "literature", 8);
+            // Parent categories (flat structure for Explore Themes)
+            createCategory("News", "news", null, 1);
+            createCategory("Philosophy", "philosophy", null, 2);
+            createCategory("Ethics", "ethics", null, 3);
+            createCategory("Literature", "literature", null, 4);
+            createCategory("Others", "others", null, 5);
+            
+            // News subcategories (for dropdown filter)
+            createCategory("National", "national", "news", 1);
+            createCategory("International", "international", "news", 2);
+            
+            // Literature subcategories (for dropdown filter)
+            createCategory("Hindi", "hindi", "literature", 1);
+            createCategory("English", "english", "literature", 2);
+            
             System.out.println("✅ Default categories created.");
         }
     }

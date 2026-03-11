@@ -20,8 +20,8 @@ function formatDate(d: string | null) {
 }
 
 export const metadata = {
-  title: 'All Ideas — Tea and Theories',
-  description: 'Browse all articles on Tea and Theories.',
+  title: 'All Ideas — Pasta and Perspective',
+  description: 'Browse all articles on Pasta and Perspective.',
 };
 
 export default async function ArticlesPage() {

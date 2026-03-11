@@ -36,17 +36,17 @@ async function getRelated(slug: string): Promise<Article[]> {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = await getArticle(slug);
-  if (!article) return { title: 'Not Found — Tea and Theories' };
+  if (!article) return { title: 'Not Found — Pasta and Perspective' };
   const desc = article.metaDescription || article.excerpt || undefined;
   return {
-    title: `${article.title} — Tea and Theories`,
+    title: `${article.title} — Pasta and Perspective`,
     description: desc,
     openGraph: {
       title: article.title,
       description: desc,
       type: 'article',
       publishedTime: article.publishedAt,
-      authors: [article.author || 'Tea and Theories'],
+      authors: [article.author || 'Pasta and Perspective'],
       images: article.coverImage ? [{ url: article.coverImage }] : [],
     },
   };
@@ -105,7 +105,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm"
               style={{ color: 'var(--muted2)' }}>
               <span className="font-medium" style={{ color: 'var(--muted)' }}>
-                {article.author || 'Tea and Theories'}
+                {article.author || 'Pasta and Perspective'}
               </span>
               {date && <><span>·</span><span>{date}</span></>}
               <span>·</span>
@@ -157,7 +157,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {related.length > 0 && (
             <div className="mt-12 pt-8" style={{ borderTop: '1px solid var(--border)' }}>
               <h2 className="font-serif text-xl font-bold mb-2" style={{ color: 'var(--ink)' }}>
-                More from {article.categoryName || 'Tea and Theories'}
+                More from {article.categoryName || 'Pasta and Perspective'}
               </h2>
               <div>
                 {related.map(a => <ArticleCard key={a.id} article={a} />)}

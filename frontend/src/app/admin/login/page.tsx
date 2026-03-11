@@ -35,7 +35,7 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-[#fafaf8] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-10 text-center">
-          <h1 className="font-serif text-2xl font-bold text-[#0a0a0a] mb-1">Tea and Theories</h1>
+          <h1 className="font-serif text-2xl font-bold text-[#0a0a0a] mb-1">Pasta and Perspective</h1>
           <p className="text-sm text-[#9b9b9b]">Admin sign in</p>
         </div>
 

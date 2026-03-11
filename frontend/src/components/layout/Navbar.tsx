@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="max-w-[760px] mx-auto px-6 h-14 flex items-center justify-between">
           <Link href="/" className="font-serif text-xl font-bold tracking-tight hover:opacity-70 transition-opacity"
             style={{ color: 'var(--ink)' }}>
-            Tea and Theories
+            Pasta and Perspective
           </Link>
           <div className="flex items-center gap-1">
             <button onClick={toggle}

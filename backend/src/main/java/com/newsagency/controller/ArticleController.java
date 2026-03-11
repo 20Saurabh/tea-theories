@@ -54,6 +54,12 @@ public class ArticleController {
         return articleService.getByCategory(slug);
     }
 
+    // Get articles for a parent category including all subcategories
+    @GetMapping("/categories/{slug}/articles-with-children")
+    public List<ArticleDTO> getByParentCategory(@PathVariable String slug) {
+        return articleService.getByParentCategory(slug);
+    }
+
     // Comments
     @GetMapping("/articles/{slug}/comments")
     public ResponseEntity<List<CommentDTO>> getComments(@PathVariable String slug) {

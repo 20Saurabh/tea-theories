@@ -2,8 +2,8 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata = {
-  title: 'About — Tea and Theories',
-  description: 'About Tea and Theories - Independent platform for ideas, commentary, and thoughtful writing.',
+  title: 'About — Pasta and Perspective',
+  description: 'About Pasta and Perspective - Independent platform for ideas, commentary, and thoughtful writing.',
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
           </div>
           <article className="py-8">
             <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
-              Tea and Theories is an independent platform for ideas, commentary, and thoughtful writing. We explore news, history, philosophy, ethics, and literature—examining the ideas and narratives behind events. Our aim is to encourage reflection and critical thinking in an age of constant information.
+              Pasta and Perspective is an independent platform for ideas, commentary, and thoughtful writing. We explore news, history, philosophy, ethics, and literature—examining the ideas and narratives behind events. Our aim is to encourage reflection and critical thinking in an age of constant information.
             </p>
           </article>
         </div>

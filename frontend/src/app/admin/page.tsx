@@ -91,7 +91,7 @@ export default function AdminDashboard() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="font-serif text-2xl font-bold text-[#0a0a0a]">Dashboard</h1>
-          <p className="text-sm text-[#9b9b9b] mt-0.5">Tea and Theories — Admin</p>
+          <p className="text-sm text-[#9b9b9b] mt-0.5">Pasta and Perspective — Admin</p>
         </div>
         <Link
           href="/admin/articles/new"

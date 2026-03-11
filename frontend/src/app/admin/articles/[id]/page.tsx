@@ -36,7 +36,7 @@ export default function EditArticlePage() {
   const [categoryId, setCategoryId] = useState('');
   const [published, setPublished] = useState(false);
   const [coverImage, setCoverImage] = useState('');
-  const [author, setAuthor] = useState('Tea and Theories');
+  const [author, setAuthor] = useState('Pasta and Perspective');
   const [metaDescription, setMetaDescription] = useState('');
   const [tags, setTags] = useState('');
   const [scheduledAt, setScheduledAt] = useState('');
@@ -59,7 +59,7 @@ export default function EditArticlePage() {
         setContent(article.content || '');
         setPublished(article.published || false);
         setCoverImage(article.coverImage || '');
-        setAuthor(article.author || 'Tea and Theories');
+        setAuthor(article.author || 'Pasta and Perspective');
         setMetaDescription(article.metaDescription || '');
         setTags(article.tags || '');
         if (article.scheduledAt) {

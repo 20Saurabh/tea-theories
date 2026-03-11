@@ -57,6 +57,18 @@ public class ArticleService {
                 .map(this::toDTO).collect(Collectors.toList());
     }
 
+    // Get articles for a parent category including all subcategories
+    public List<ArticleDTO> getByParentCategory(String parentSlug) {
+        return articleRepository.findByParentCategorySlug(parentSlug)
+                .stream()
+                .sorted((a, b) -> {
+                    if (a.getPublishedAt() == null) return 1;
+                    if (b.getPublishedAt() == null) return -1;
+                    return b.getPublishedAt().compareTo(a.getPublishedAt());
+                })
+                .map(this::toDTO).collect(Collectors.toList());
+    }
+
     // Related articles: same category, exclude current
     public List<ArticleDTO> getRelated(String categorySlug, String excludeSlug, int limit) {
         return articleRepository.findByCategorySlugAndPublishedTrue(categorySlug)

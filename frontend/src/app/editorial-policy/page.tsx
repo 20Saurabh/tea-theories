@@ -2,8 +2,8 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata = {
-  title: 'Editorial Policy — Tea and Theories',
-  description: 'Editorial policy of Tea and Theories - thoughtful analysis and discussion.',
+  title: 'Editorial Policy — Pasta and Perspective',
+  description: 'Editorial policy of Pasta and Perspective - thoughtful analysis and discussion.',
 };
 
 export default function EditorialPolicyPage() {
@@ -19,7 +19,7 @@ export default function EditorialPolicyPage() {
           </div>
           <article className="py-8">
             <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
-              Tea and Theories publishes articles, essays, and commentary on news, philosophy, literature, ethics, and social issues. While we strive for accuracy and responsible commentary, views expressed reflect the author's perspective. Our purpose is thoughtful analysis and discussion rather than real-time news reporting.
+              Pasta and Perspective publishes articles, essays, and commentary on news, philosophy, literature, ethics, and social issues. While we strive for accuracy and responsible commentary, views expressed reflect the author's perspective. Our purpose is thoughtful analysis and discussion rather than real-time news reporting.
             </p>
           </article>
         </div>
